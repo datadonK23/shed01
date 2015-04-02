@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>data/euw14SR.xml</file>
+        <file>data/map_SRNamen.png</file>
+    </qresource>
+</RCC>

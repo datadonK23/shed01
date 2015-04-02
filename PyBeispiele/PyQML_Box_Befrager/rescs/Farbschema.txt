@@ -1,0 +1,12 @@
+Farben:
+
+Hinterg	#f9f2e7
+Rahmen	#00a8c6
+BHintg	#40c0cb
+BRahmen	#aee239
+NavHint	#40c0cb
+NavRahm	#8fbe00
+InfoRah	#8fbe00
+textRah	#00a8c6
+Text	#515151
+Itemtxt	#9e9e9e

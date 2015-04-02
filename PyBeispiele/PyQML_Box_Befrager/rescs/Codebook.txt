@@ -1,0 +1,7 @@
+Items:
+1) GemueseSelbst: 1 - "sehr unwichtig"; 2 - "unwichtig"; 3 - "unentschieden"; 4 - "wichtig"; 5 - "sehr wichtig"; 0 - keine Antwort
+2) UnterstuetzGem: 1 - "sehr unerwünscht"; 2 - "unerwünscht"; 3 - "unentschieden"; 4 - "erwünscht"; 5 - "sehr erwünscht"; 0 - keine Antwort
+3) SozBedeutung: 1 - "lehne stark ab"; 2 - "lehne ab"; 3 - "unentschieden"; 4 - "stimme zu"; 5 - "stimme stark zu"; 0 - keine Antwort
+4) GemGr: 1 - "< 1.000"; 2 - "1.000-2.500"; 3 - "2.500-5.000"; 4 - "5.000-30.000"; 5 - "> 30.000"; 0 - keine Antwort
+5) Geschl: 1 - "maennlich"; 2 - "weiblich"; 3 - "anderes Geschlecht/keine Antwort"; 0 - keine Antwort
+6) Alter: 1 - "20-"; 2 - "20-29"; 3 - "30-39"; 4 - "40-49"; 5 - "50-60"; 6- "60+"; 0 - keine Antwort

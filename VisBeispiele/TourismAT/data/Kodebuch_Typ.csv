@@ -1,0 +1,22 @@
+code;name;;en_name;de_desc;de_link;en_desc;en_link;de_syn;en_syn
+01;Hotel o.ä.Betr.,Kat.5/4-Stern(Superior) <01>;;Hotel,similar est.,cat.A1,A <01>;;;;;;
+02;Hotel od. ähnl. Betrieb, Kateg.3-Stern <02>;;Hotel,similar establishments,categ.B <02>;;;;;;
+03;Hotel od. ähnl. Betrieb, Kateg.2/1-Stern<03>;;Hotel,similar establishments,categ.C/D <03>;;;;;;
+04;Ferienwohnung/-haus (gewerbl.)(ab11/97) <04>;;Holiday flat/house (commercial) (11/97-)<04>;;;;;;
+70;Campingplatz <70>;;Camping place <70>;;;;;;
+81;Jugendherberge, Jugendgästehaus <81>;;Youth hostel, youth guest house <81>;;;;;;
+73;Kinder- und Jugenderholungsheim <73>;;Convalescent home f.children,adolescents<73>;;;;;;
+71;Kurheim der Sozialversicherungsträger <71>;;Sanatorium of social insurance corporat.<71>;;;;;;
+76;privates od.öffentl.Kurheim (ab 11/97) <76>;;Private or public sanatorium (11/97-) <76>;;;;;;
+83;bewirtschaftete Schutzhütte <83>;;Alpine shelter with catering service <83>;;;;;;
+84;sonstige Unterkunft <84>;;Other tourist accommodation <84>;;;;;;
+60;Privatquartier nicht auf Bauernhof <60>;;Private accommodation except on a farm <60>;;;;;;
+61;Privatquartier auf Bauernhof (ab 1980) <61>;;Private accommodation on a farm (1980-) <61>;;;;;;
+86;Ferienwhg/-haus(priv),n.auf BH(ab 11/97)<86>;;Holid.flat/house(priv.)non-farm(11/97-) <86>;;;;;;
+87;Ferienwhg/-haus(priv) auf B-Hof(ab11/97)<87>;;Holid.flat/house(priv.)on a farm(11/97-)<87>;;;;;;
+75;Sanatorium,Heil-o.Pflegeanstalt(-10/97) <75>;;Sanatorium, asylum, nursing home(-10/97)<75>;;;;;;
+72;sonst.Kur-o.Erholungsheim f.Erw.(-10/97)<72>;;Other sanatorium etc. for adults(-10/97)<72>;;;;;;
+74;Erholungsheim für Erwachsene (bis 1979) <74>;;Convalescent home for adults (-1979) <74>;;;;;;
+85;Ferienwohnung, Ferienhaus (1980-10/97) <85>;;Holiday flat or house (1980-10/97) <85>;;;;;;
+998;unbekannte gewerbliche Betriebe <998>;;;;;;;;
+999;unbekannte private Betriebe <999>;;;;;;;;

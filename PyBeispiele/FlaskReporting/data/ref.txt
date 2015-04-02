@@ -1,0 +1,6 @@
+Referenzen:
+
+* wohngeb_70-79.csv: Statistik Austria - Neu errichtete Gebäude mit Wohnungen, 1970-1979: 
+  http://www.statistik.at/web_de/statistiken/wohnen_und_gebaeude/errichtung_von_gebaeuden_und_wohnungen/index.html; dl. 12.08.2014
+* wohngeb_80-02.csv: Statistik Austria - Neu errichtete Gebäude mit Wohnungen, 1980-2002: 
+  http://www.statistik.at/web_de/statistiken/wohnen_und_gebaeude/errichtung_von_gebaeuden_und_wohnungen/index.html; dl. 12.08.2014

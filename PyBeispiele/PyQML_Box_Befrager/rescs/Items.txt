@@ -1,0 +1,10 @@
+* Vereinfachtes Beispiel *
+Thema: Selbstversorgung mit Nahrungsmittel in Oberösterreich
+
+Items:
+1) Persönliche Bedeutung (Meinung) - "Wie wichtig ist Ihnen, selbst Gemüse anzubauen?": 5-stufige Skala (sehr unwichtig : sehr wichtig)
+2) Unterstützung Gemeinde (Wunsch) - "Ist für Sie Unterstützung bei der Umsetzung eines Gartens seitens der Gemeinde erwünscht?"   5-stufige Skala (sehr unerwünscht : sehr erwünscht)
+3) Gesellschaftliche Bedeutung (Meinung) - "Stimmen Sie der Behauptung zu: Selbstversorgung mit Nahrungsmittel hat eine gesellschaftliche Relevanz.":  (lehne stark ab :stimme stark zu)
+4) Gemeindegrösse - "Wieviele Einwohner hat Ihre Gemeinde?" - Kategorien (< 1.000; 1.000-2.500; 2.500-5.000; 5.000-30.000; > 30.000)
+5) Geschlecht - "Sind Sie männlich oder weiblich?": dichotom (männl./weibl.); +Box anderes Geschlecht/keine Antwort
+6) Alter - "Wie alt sind Sie?": Kategorien (20-; 20-29; 30-39; 40-49; 50-60; 60+)

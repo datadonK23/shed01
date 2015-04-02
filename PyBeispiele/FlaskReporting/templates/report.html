@@ -1,0 +1,52 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Report{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle"
+      data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+	<li><a href="/report">Report</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+	<li><a href="/data">Daten</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header">
+    <h1>Wohngeb&auml;ude</h1>
+    <p>Anzahl an fertiggestellten Geb&auml;uden mit Wohnungen in &Ouml;sterreich zwischen 1970 und 2002</p>
+  </div>
+  <div class="stat">
+    <h3>Statistik</h3>
+    <p> {{ sumtable|safe }} </p>
+  </div>
+  <div class="img">
+    <h3>Diagramm</h3>
+    <p>Liniendiagramm mit linearer Regressionsgerade</p>
+    <img src="/static/IMG/plot.png" alt="plot" width="600">
+  </div>
+  <div class="ref">
+    <h4>Referenz</h4>
+    <p><b>Datenquelle: </b><a href="http://www.statistik.at/web_de/statistiken/wohnen_und_gebaeude/index.html">Statistik Austria</a>
+       , 2014
+    </p>    
+  </div>
+</div>
+{% endblock %}

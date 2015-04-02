@@ -1,0 +1,50 @@
+shinyMig_UpperAT
+========================================================
+author: Thomas Treml (donK23)
+date: 23 Jul 2014
+font-family: 'Helvetica'
+css: shinyMig_Presentation.css
+
+<large>
+<b>Presentation</b> for Coursera MOOC: <br>
+<i>Developing Data Products</i>
+</large>
+
+
+Topic
+========================================================
+
+Migration balances in 18 districts of Upper Austria <br>
+<br>
+<b>Data</b> taken from: <br>
+"Datenquelle: Land Oberösterreich - data.ooe.gv.at"
+
+
+Adjustment
+========================================================
+
+Adjustable Input:
+
+- <i>Fixed input:</i> Time period (period 2002 to 2012 or single year)
+- <i>Reactive input:</i> Slider (year adjustment)
+
+Output
+========================================================
+
+<b>Map:</b>
+
+- Chloropleth map of Upper Austria, showing colorcoded districts
+
+<b>Table:</b>
+
+- Table with immigration, emigration and migration balance data per time period
+
+
+Difficulty: Classification Scheme
+========================================================
+
+Continuos colorcoding problematic, because of right screwed distribution (see <b>plot</b> below). Quantile binning make comparison of maps hard. <br>
+<i>Solution</i>: Semi-manual classification scheme. Dividing pos. and neg. balances and calculate mean as break point in both groups. 
+
+![plot of chunk unnamed-chunk-1](shinyMig_Presentation-figure/unnamed-chunk-1.png) 
+
