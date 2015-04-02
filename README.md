@@ -8,7 +8,7 @@ Ressourcendateien, Anwendungen und Beispieldaten (falls keine Downloadanweisung 
 * AnaBeispiele - Daten Analyse
 * PyBeispiele - Beispiele mit Python
 * rBeispiele - Beispiele mit R
-* visBeispiele - Daten Visualisierung
+* VisBeispiele - Daten Visualisierung
 * LICENSE - Lizenz Datei
 * NOTICE - Notice Datei
 
