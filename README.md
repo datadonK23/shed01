@@ -1,7 +1,7 @@
 shed01
 ======
 
-Beispielcode und -ressourcen Shed01 Blog
+Beispielcode und -ressourcen Shed01 Blog (http://shed01.blogspot.co.at)
 
 ## Repository enthält:
 Ressourcendateien, Anwendungen und Beispieldaten (falls keine Downloadanweisung in den Projekten enthalten ist) aus den Beispielen des Shed01 Blogs (http://shed01.blogspot.co.at/):
