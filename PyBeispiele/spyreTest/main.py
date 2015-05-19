@@ -8,6 +8,7 @@ Date: 2015-05-19
 
 
 from spyre import server
+import model
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -67,19 +68,21 @@ class Spyre_app(server.Launch):
     def getData(self, params):
         ticker = params['ticker']
         # make call to yahoo finance api to get historical stock data
-        api_url = 'https://chartapi.finance.yahoo.com/instrument/1.0/{}/chartdata;type=quote;range=3m/json'.format(ticker)
-        result = urllib2.urlopen(api_url).read()
-        data = json.loads(result.decode('utf-8').replace('finance_charts_json_callback( ','')[:-1])  # strip away the javascript and load json
-        self.company_name = data['meta']['Company-Name']
-        df = pd.DataFrame.from_records(data['series'])
-        df['Date'] = pd.to_datetime(df['Date'],format='%Y%m%d')
+        #api_url = 'https://chartapi.finance.yahoo.com/instrument/1.0/{}/chartdata;type=quote;range=3m/json'.format(ticker)
+        #result = urllib2.urlopen(api_url).read()
+        #data = json.loads(result.decode('utf-8').replace('finance_charts_json_callback( ','')[:-1])  # strip away the javascript and load json
+        #self.company_name = data['meta']['Company-Name']
+        #df = pd.DataFrame.from_records(data['series'])
+        #df['Date'] = pd.to_datetime(df['Date'],format='%Y%m%d')
+        df = model.get_data("cycling_coll.json")
         return df
 
     def getPlot(self, params):
         df = self.getData(params)
-        plt_obj = df.set_index('Date').drop(['volume'],axis=1).plot()
-        plt_obj.set_ylabel("Price")
-        plt_obj.set_title(self.company_name)
+        #plt_obj = df.set_index('Date').drop(['volume'],axis=1).plot()
+        #plt_obj.set_ylabel("Price")
+        #plt_obj.set_title(self.company_name)
+        plt_obj = df.plot()#set_index("Date").plot()
         fig = plt_obj.get_figure()
         return fig
 
