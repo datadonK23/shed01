@@ -8,12 +8,13 @@ Python-Skripte und Beispieldaten (falls keine Downloadanweisung in Skripten enth
 * PyQML_Box_Befrager: Befragungsanwendung basierend auf QtQuick1 und Python zu Thema "Selbstversorgung"
 * FlaskReporting: Beispielanwendung fuer einen Datenanalyse Report mit Flask
 * geocoderMapqust: Geokodierungsskript
+* SportActivities: Spyre App mit Daten von Strava
 * ...
 
 ### Kontakt: datadonk23@gmail.com
 
 ### Lizenz: Apache License, Version 2 (siehe ../LICENSE)
-Copyright 2015 Thomas Treml
+Copyright 2014-2015 Thomas Treml
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
