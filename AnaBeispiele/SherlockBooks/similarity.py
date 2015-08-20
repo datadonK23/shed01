@@ -2,12 +2,13 @@
 Name: Similarty
 Purpose: Process similarities between Sherlock Holmes books
 Author: Thomas Treml (datadonk23@gmail.com)
-Date: 19.08.2015
+Date: 20.08.2015
 """
 
 import os
 import string
-import itertools
+import cPickle
+import pandas as pd
 from nltk import data
 data.path.append("/home/donk23/Workspace/nltk_data/")
 from nltk.corpus import stopwords
@@ -40,21 +41,25 @@ def cosine_sim(text1, text2):
 
 # Read in files and calculate similarity matrix
 path = "./data/SherlockHolmes-ProjektGutenberg"
-filenames1 = []
-similarity_list = []
+book_pairs = [] # map for calculation
+filenames_list = os.listdir(path)
+filenames_list.remove("README.md")
+for f1 in range(len(filenames_list)):
+    for f2 in range(f1, len(filenames_list)):
+        book_pairs.append((filenames_list[f1], filenames_list[f2]))
+book_pairs.sort()
 
-# FIXME LOOP
-for file in filenames_list:
-    col_list = [file]
-    filenames_list.remove(file)
-    with open(path + "/" + file) as f:
-            file1 = f.read()
-            for other_filename in filenames_list:
-                with open(path + "/" + other_filename) as of:
-                    file2 = of.read()
-                    simi = cosine_sim(file1, file2)
-                    col_list.append(simi)
-                similarity_list.append(col_list)
+similarities = {}
+for pair in book_pairs:
+    with open(path + "/" + pair[0]) as f1:
+        text1 = f1.read()
+    with open(path + "/" + pair[1]) as f2:
+        text2 = f2.read()
+    similarities[pair] = cosine_sim(text1, text2)
 
-print similarity_list
-len(similarity_list) == 120
+# Make DF and write pickle
+similarities_df = pd.DataFrame.from_dict(similarities, orient="index")
+
+cPickle.dump(similarities_df, open("./data/similarities.p", "wb"))
+
+print "finished"
