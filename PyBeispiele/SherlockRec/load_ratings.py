@@ -37,6 +37,7 @@ ratings = {"USER_ID": user_ids, "RATED_AT": ts, "RAT_B01": br01, "RAT_B02": br02
            "RAT_B05": br05, "RAT_B06": br06, "RAT_B07": br07, "RAT_B08": br08, "RAT_B09": br09, "RAT_B10": br10,
            "RAT_B11": br11, "RAT_B12": br12, "RAT_B13": br13, "RAT_B14": br14, "RAT_B15": br15}
 ratings_df = pd.DataFrame(ratings)
+ratings_df.replace(0, np.nan, inplace=True)
 cPickle.dump(ratings_df, open("./data/ratings_df.p", "wb"))
 
 print "Ratings records: " + str(len(ratings_df))

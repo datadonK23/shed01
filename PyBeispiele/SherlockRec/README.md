@@ -1,7 +1,7 @@
 SherlockRec
 ===========
 
-Empfehlungsmaschine, die basierenden auf abgegebene (simulierte!) Ratings von Benutzern eine Empfehlung über Bücher aus der Sherlock Holmes Reihe von Sir Arthur Conan Doyle abgibt.
+Empfehlungsmaschine, die basierend auf abgegebene (simulierte!) Ratings von Benutzern eine Empfehlung über Bücher aus der Sherlock Holmes Reihe von Sir Arthur Conan Doyle abgibt.
 
 ## Repository enthält:
 Ressourcendateien, Anwendungen und Beispieldaten (falls keine Downloadanweisung in den Projekten enthalten ist) aus den Beispielen des Shed01 Blogs (http://shed01.blogspot.co.at/):
