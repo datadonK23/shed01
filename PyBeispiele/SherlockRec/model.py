@@ -2,60 +2,44 @@
 Name: model
 Purpose: Analytical model for collaborative filtering
 Author: Thomas Treml (datadonk23@gmail.com)
-Date: 2015-08-26
+Date: 2015-08-31
 """
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import euclidean_distances, jaccard_similarity_score
+from sklearn.metrics import jaccard_similarity_score
 from sklearn.cross_validation import train_test_split
 import cPickle
 
 # Load pre-loaded dataframes and explore
 books_df = cPickle.load(open("./data/books_df.p", "rb"))
 ratings_df = cPickle.load(open("./data/ratings_df.p", "rb"))
-ratings_df.replace(np.nan, 0, inplace=True)
 
 # train-test-split
 train_df, test_df = train_test_split(ratings_df, test_size=0.2)
 
 # dummy ratings
-my_rating = [3., 4., 5., 3., 0., 4., 3., 0., 0., 0., 0., 0., 0., 0., 0.]
-dummy_rating = list(np.random.randint(0, 6, size=15))
+my_rating = [-1, 1, 1, -1, 0., 1, -1, 0., 0., 0., 0., 0., 0., 0., 0.]
+dummy_rating = list(np.random.randint(-1, 1, size=15))
 
 """ Similarity Measurement """
-# Euclidean Distance
-#eucldissk_12 = euclidean_distances(my_rating, vec1)
-
-# Pearson
-#r = np.corrcoef(my_rating, list(vec1))
-#print r[0, 1]
-
-# Jaccard
-#js = jaccard_similarity_score(my_rating, list(vec1))
-#print js
-
-
-def all_books_recommendation(user_rating=my_rating, ratings_data=train_df, method=np.corrcoef):
+def all_books_recommendation(user_rating=my_rating, ratings_data=train_df, method=jaccard_similarity_score):
     """
     Recommendation engine based on collaborative filtering
 
     :param user_rating: list of user inputs. Size 15, nan replaced with 0
     :param ratings_data: dataframe with user ratings about the 15 books
-    :param method: similarity measurement method. Pearsons R (default), Jaccard similarity score and Euclidean distance
-                    also possible
+    :param method: similarity measurement method. Jaccard similarity (default)
     :return: array of recommendation ratings for all 15 books
     """
     ratings_matrix = ratings_data.ix[: , "RAT_B01":"RAT_B15"].as_matrix()
     weighted_ratings = np.array([]); similarities = np.array([])
     for row in ratings_matrix:
-        sim = method(user_rating, list(row))
-        if sim.size > 1: # pearson
-            sim = sim[0,1]
-        else:
-            sim = float(sim)
-        weighted_row = row * sim
-        row[row!=0.] = sim
+        similarity_coefficient = method(user_rating, row)
+        weighted_row = row * similarity_coefficient
+        print row
+        row[row!=0] = similarity_coefficient #FIXME
+        print row
         if weighted_ratings.size == 0 and similarities.size == 0:
             weighted_ratings = np.hstack((weighted_ratings, weighted_row))
             similarities = np.hstack((similarities, row))
@@ -99,24 +83,11 @@ def sort_recommendation(recommended_idx, recommended_ratings):
 
 
 
-recommended_books, recommended_ratings = filter_recommendation(all_books_recommendation(ratings_data=ratings_df,
-                                                                                        method=jaccard_similarity_score), my_rating)
+recommended_books, recommended_ratings = filter_recommendation(all_books_recommendation(my_rating, ratings_data=ratings_df))
+
 my_recommdendation = sort_recommendation(recommended_books, recommended_ratings)
 print my_recommdendation
 
-def compare_method(test_rating_df=test_df):
-    all_test_data = test_rating_df.ix[:, "RAT_B01":"RAT_B15"]
-    random_rating = all_test_data.sample(1)
-    print "test vector: "
-    test_input =  random_rating.values.tolist()[0]
-    print test_input
-    recomm1 = all_books_recommendation(test_input)
-    recomm2 = all_books_recommendation(test_input, method=jaccard_similarity_score)
-    recomm3 = all_books_recommendation(test_input, method=euclidean_distances)
-    #print recomm1
-    #print recomm2
-    #print recomm3
-    #FIXME
 
-#print compare_method()
-
+x = all_books_recommendation(my_rating, ratings_data=ratings_df)
+print x

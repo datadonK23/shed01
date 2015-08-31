@@ -2,7 +2,7 @@
 Name: simulate_ratings
 Purpose: Create dummy data for a recommendation system based on collaborative filtering
 Author: Thomas Treml (datadonk23@gmail.com)
-Date: 24.08.2015
+Date: 31.08.2015
 """
 
 import numpy as np
@@ -24,12 +24,12 @@ book_ids = range(1, 16)
 
 
 """ Ratings engine """
-p_rating = [0.5, 0.05, 0.05, 0.1, 0.2, 0.1] # p for 0 (no Rating), [1:5] stars
+p_rating = [0.1, 0.6, 0.3] # p for -1 (dislike), 0 (no Rating), 1 (like)
 sim_ratings = pd.DataFrame(columns=["USER_ID", "RATINGS"])
 for user_id in user_ids:
-    user_ratings = np.random.choice([0., 1. , 2., 3., 4., 5.], size=15, p=p_rating)
-    sim_ratings.loc[user_id] = user_id, user_ratings
-#print sim_ratings
+    user_ratings = np.random.choice([-1., 0, 1.], size=15, p=p_rating)
+    sim_ratings.loc[user_id] = user_id, user_ratings.astype(int)
+print sim_ratings
 
 
 """ Ratings table """
