@@ -6,6 +6,11 @@ from flask import render_template, request, redirect, url_for
 from app import app#, connection
 #from models import Features
 
+import json
+import re
+
+rating_to_process = None
+
 # main page
 @app.route("/")
 def index(): 
@@ -30,8 +35,19 @@ def survey():
 def recommendation(ratings=None):
     if ratings:
         print ratings
+        json_acceptable_string = ratings.replace("'", "\"").replace("u", "")
+        #print json_acceptable_string
+        input_dict = json.loads(json_acceptable_string)
+        global rating_to_process
+        rating_to_process = input_dict["inpt_book01"]
         return redirect(url_for("recommendation"))
-    return render_template("recommendation.html")
+
+    if rating_to_process:
+        clean_input = int(rating_to_process)
+        testRecomm = str(clean_input) + " ist der erste Wert"
+    else:
+        testRecomm = "test123"
+    return render_template("recommendation.html", testRecomm=testRecomm)
 
 
 #FIXME
