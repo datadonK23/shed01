@@ -4,7 +4,7 @@ Views
 
 from flask import render_template, request, redirect, url_for
 from app import app#, connection
-#from models import Features
+import models
 
 import json
 import re
@@ -39,14 +39,16 @@ def recommendation(ratings=None):
         #print json_acceptable_string
         input_dict = json.loads(json_acceptable_string)
         global rating_to_process
-        rating_to_process = input_dict["inpt_book01"]
+        rating_to_process = [input_dict["inpt_book01"], input_dict["inpt_book02"]]
         return redirect(url_for("recommendation"))
 
     if rating_to_process:
-        clean_input = int(rating_to_process)
-        testRecomm = str(clean_input) + " ist der erste Wert"
+        test1 = str(int(rating_to_process[0])) + " ist der erste Wert"
+        test2 = str(int(rating_to_process[1])) + " ist der zweite Wert"
+        test3 = "Buch3"
+        testRecomm = [test1, test2, test3]
     else:
-        testRecomm = "test123"
+        testRecomm = ["test123", "test456"]
     return render_template("recommendation.html", testRecomm=testRecomm)
 
 

@@ -73,21 +73,37 @@
                                 <a href="https://de.wikipedia.org/wiki/Jaccard-Koeffizient" target="_blank">
                                     Jaccard Koeffizient
                                 </a>
-                                werden Dir folgende B&uuml;cher aus der Sherlock Holmes Reihe zur weiteren
-                                Lekt&uuml;re empfohlen.</p>
+                                werden Dir B&uuml;cher aus der Sherlock Holmes Reihe zur weiteren
+                                Lekt&uuml;re empfohlen.
+                            </p>
+                            <p>
+                                Im folgenden Widget kannst Du die individuelle Empfehlung sehen.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 col-md-offset-0 ">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Deine Empfehlung</h3>
-                        </div>
-                        <div class="panel-body" id="input-form">
-                            <p> TEST TEXT </p>
-                            <p> {{ testRecomm }} </p>
 
-                        </div>
+                            <div class="panel-heading">Deine Empfehlungen</div>
+                            <div class="panel-body">Sortiert</div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Buch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in testRecomm %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ item }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
                     </div>
                 </div>
             </div>
