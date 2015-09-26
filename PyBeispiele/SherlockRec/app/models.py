@@ -19,7 +19,7 @@ class DB:
         """
         # DB query
         query_books = "SELECT * FROM books"
-        books = con.execute(sql.text(query_books))
+        books = self.con.execute(sql.text(query_books))
 
         # Data processing
         book_ids = []; titles = []
@@ -38,7 +38,7 @@ class DB:
         """
         # DB query
         query_ratings = "SELECT * FROM ratings"
-        all_ratings = con.execute(sql.text(query_ratings))
+        all_ratings = self.con.execute(sql.text(query_ratings))
 
         # Data processing
         user_ids = []; ts = []; br01 = []; br02 = []; br03 = []; br04 = []; br05 = []; br06 = []; br07 = []; br08 = [];

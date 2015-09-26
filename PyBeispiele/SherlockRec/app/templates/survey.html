@@ -83,7 +83,24 @@
                             <form class="form-horizontal">
                                 <fieldset>
                                     <legend>Bewertung</legend>
+                                    <!-- Input for each book -->
+                                    {% for item in bookTitles %}
+                                    <div class="form-group text-center">
+                                        <label class="col-lg-8 control-label">{{ item }}</label>
+                                        <div class="col-lg-4">
+                                            <label class="radio-inline"><input type="radio" name="IN{{loop.index}}" value="-1"></label>
+                                            <label class="radio-inline"><input type="radio" name="IN{{loop.index}}" value="0" checked=""></label>
+                                            <label class="radio-inline"><input type="radio" name="IN{{loop.index}}" value="1"></label>
+                                        </div>
+                                        <div class="col-lg-4 col-lg-offset-8">
+                                            <i class="fa fa-minus-square fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-square fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-plus-square fa-lg"></i>&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                    {% endfor %}
 
+                                    <!-- Input Template
                                     <div class="form-group text-center">
                                         <label class="col-lg-8 control-label">A Study in Scarlet</label>
                                         <div class="col-lg-4">
@@ -97,33 +114,7 @@
                                             <i class="fa fa-plus-square fa-lg"></i>&nbsp;&nbsp;
                                         </div>
                                     </div>
-                                    <div class="form-group text-center">
-                                        <label class="col-lg-8 control-label">The Sign of the Four</label>
-                                        <div class="col-lg-4">
-                                            <label class="radio-inline"><input type="radio" name="INBook02" value="-1"></label>
-                                            <label class="radio-inline"><input type="radio" name="INBook02" value="0" checked=""></label>
-                                            <label class="radio-inline"><input type="radio" name="INBook02" value="1"></label>
-                                        </div>
-                                        <div class="col-lg-4 col-lg-offset-8">
-                                            <i class="fa fa-minus-square fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <i class="fa fa-square fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <i class="fa fa-plus-square fa-lg"></i>&nbsp;&nbsp;
-                                        </div>
-                                    </div>
-                                    <div class="form-group text-center">
-                                        <label class="col-lg-8 control-label">The Adventures of Sherlock Holmes</label>
-                                        <div class="col-lg-4">
-                                            <label class="radio-inline"><input type="radio" name="INBook03" value="-1"></label>
-                                            <label class="radio-inline"><input type="radio" name="INBook03" value="0" checked=""></label>
-                                            <label class="radio-inline"><input type="radio" name="INBook03" value="1"></label>
-                                        </div>
-                                        <div class="col-lg-4 col-lg-offset-8">
-                                            <i class="fa fa-minus-square fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <i class="fa fa-square fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <i class="fa fa-plus-square fa-lg"></i>&nbsp;&nbsp;
-                                        </div>
-                                    </div>
-
+-->
                                     <div class="form-group text-center">
                                         <div class="col-lg-12">
                                             <hr>
