@@ -5,18 +5,18 @@ Views
 from flask import render_template, request, redirect, url_for
 from app import app
 import models
-#import controller
 
 import json
 import collections
 
 rating_to_process = None
 
-# main page
+# MAIN page
 @app.route("/")
 def index(): 
     return render_template("index.html")
 
+# SURVEY page
 @app.route("/survey")
 def survey():
     bookTitles = []
@@ -38,7 +38,7 @@ def survey():
     else:
         return render_template("survey.html", bookTitles=bookTitles)
 
-
+# RECOMMENDATION page
 @app.route("/recommendation/<ratings>/")
 @app.route("/recommendation")
 def recommendation(ratings=None):
@@ -65,28 +65,30 @@ def recommendation(ratings=None):
 
         # make recommendation
         rec_engine = models.RecommendationEngine(user_rating=user_rating_list, collaborative_data=collaborative_data)
-        recommendation = rec_engine.recommend_books()
-        print recommendation
+        recommendation = rec_engine.recommend_books() # [(book_id, similarity_score)]
+        print "Recommendation: " + str(recommendation)
 
         # prepare output
-        #FIXME loop
-        top1_rec_title = all_books.loc[recommendation[0][0]].TITLE
-        top2_rec_title = all_books.loc[recommendation[1][0]].TITLE
-        top3_rec_title = all_books.loc[recommendation[2][0]].TITLE
-        titlesRecomm = [top1_rec_title, top2_rec_title, top3_rec_title]
-        top1_rec_score = recommendation[0][1]
-        top2_rec_score = recommendation[1][1]
-        top3_rec_score = recommendation[2][1]
-        scoresRecomm = [top1_rec_score, top2_rec_score, top3_rec_score]
+        titlesRecomm = []
+        scoresRecomm = []
+        for i in range(len(recommendation)):
+            titlesRecomm.append(all_books.loc[recommendation[i][0]].TITLE)
+            scoresRecomm.append("%.4f" % recommendation[i][1])
+
+        # store user rating in db
+        db_connection = models.DB()
+        insert_confirmation = db_connection.insert_user_rating(user_rating_list)
+        print insert_confirmation
+
     else:
         titlesRecomm = ["Invalid Input"]
         scoresRecomm = ["NA"]
 
-    #FIXME store rating
     return render_template("recommendation.html", recomm_out=zip(titlesRecomm, scoresRecomm))
 
 
-#FIXME
+# REFERENCES page
 @app.route("/ref")
 def ref():
+    #FIXME
     return render_template("ref.html")

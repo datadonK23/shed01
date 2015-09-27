@@ -4,16 +4,30 @@ Models
 
 import numpy as np
 import pandas as pd
-from sqlalchemy import sql, create_engine
+from sqlalchemy import sql, create_engine, MetaData, Table, Column, Integer, VARCHAR, TIMESTAMP
 from sklearn.metrics import jaccard_similarity_score
 
 
 class DB:
     def __init__(self):
         from instance.config import PG_USER, PG_PASSWORD
+        # connection
         db_uri = "postgresql://" + PG_USER + ":" + PG_PASSWORD + "@localhost/shrecdb"
         engine = create_engine(db_uri)
         self.connection = engine.connect()
+        # schema
+        metadata = MetaData()
+        self.books_schema = Table("books", metadata, Column("book_id", Integer, nullable=False, primary_key=True),
+                                  Column("title", VARCHAR))
+        self.ratings_schema = Table("ratings", metadata, Column("user_id", Integer, nullable=False, primary_key=True),
+                                    Column("rated_at", TIMESTAMP), Column("rat_book_01", Integer),
+                                    Column("rat_book_02", Integer), Column("rat_book_03", Integer),
+                                    Column("rat_book_04", Integer), Column("rat_book_05", Integer),
+                                    Column("rat_book_06", Integer), Column("rat_book_07", Integer),
+                                    Column("rat_book_08", Integer), Column("rat_book_09", Integer),
+                                    Column("rat_book_10", Integer), Column("rat_book_11", Integer),
+                                    Column("rat_book_12", Integer), Column("rat_book_13", Integer),
+                                    Column("rat_book_14", Integer), Column("rat_book_15", Integer),)
 
     def get_books(self):
         """
@@ -62,6 +76,24 @@ class DB:
                    "RAT_B04": br04, "RAT_B05": br05, "RAT_B06": br06, "RAT_B07": br07, "RAT_B08": br08, "RAT_B09": br09,
                    "RAT_B10": br10, "RAT_B11": br11, "RAT_B12": br12, "RAT_B13": br13, "RAT_B14": br14, "RAT_B15": br15}
         return pd.DataFrame(ratings)
+
+    def insert_user_rating(self, user_rating):
+        """
+        Insert new rating from user into DB
+        :param user_rating: list of ratings, sorted from book01 to book15
+        :return: confirmation string
+        """
+        insert = self.ratings_schema.insert().values(rat_book_01 = user_rating[0], rat_book_02 = user_rating[1],
+                                                     rat_book_03 = user_rating[2], rat_book_04 = user_rating[3],
+                                                     rat_book_05 = user_rating[4], rat_book_06 = user_rating[5],
+                                                     rat_book_07 = user_rating[6], rat_book_08 = user_rating[7],
+                                                     rat_book_09 = user_rating[8], rat_book_10 = user_rating[9],
+                                                     rat_book_11 = user_rating[10], rat_book_12 = user_rating[11],
+                                                     rat_book_13 = user_rating[12], rat_book_14 = user_rating[13],
+                                                     rat_book_15 = user_rating[14])
+        self.connection.execute(insert)
+        self.connection.close()
+        return "Rating inserted: " + str(user_rating)
 
 
 class RecommendationEngine:
