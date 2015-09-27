@@ -86,19 +86,21 @@
                     <div class="panel panel-primary">
 
                             <div class="panel-heading">Deine Empfehlungen</div>
-                            <div class="panel-body">Sortiert</div>
+                            <div class="panel-body">Sortiert nach den h&ouml;chsten Similarity Score Werten</div>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>#</th>
                                         <th>Buch</th>
+                                        <th>Similarity Score</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for item in testRecomm %}
+                                    {% for title, score in recomm_out %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ item }}</td>
+                                            <td>{{ title }}</td>
+                                            <td>{{ score }}</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>

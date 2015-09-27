@@ -4,13 +4,16 @@ Models
 
 import numpy as np
 import pandas as pd
-from sqlalchemy import sql
+from sqlalchemy import sql, create_engine
 from sklearn.metrics import jaccard_similarity_score
 
 
 class DB:
-    def __init__(self, connection):
-        self.con = connection
+    def __init__(self):
+        from instance.config import PG_USER, PG_PASSWORD
+        db_uri = "postgresql://" + PG_USER + ":" + PG_PASSWORD + "@localhost/shrecdb"
+        engine = create_engine(db_uri)
+        self.connection = engine.connect()
 
     def get_books(self):
         """
@@ -19,7 +22,8 @@ class DB:
         """
         # DB query
         query_books = "SELECT * FROM books"
-        books = self.con.execute(sql.text(query_books))
+        books = self.connection.execute(sql.text(query_books))
+        self.connection.close()
 
         # Data processing
         book_ids = []; titles = []
@@ -29,6 +33,7 @@ class DB:
 
         # Dataframe
         books = {"BOOK_ID": book_ids, "TITLE": titles}
+
         return pd.DataFrame(books)
 
     def get_ratings(self):
@@ -38,7 +43,8 @@ class DB:
         """
         # DB query
         query_ratings = "SELECT * FROM ratings"
-        all_ratings = self.con.execute(sql.text(query_ratings))
+        all_ratings = self.connection.execute(sql.text(query_ratings))
+        self.connection.close()
 
         # Data processing
         user_ids = []; ts = []; br01 = []; br02 = []; br03 = []; br04 = []; br05 = []; br06 = []; br07 = []; br08 = [];
@@ -69,14 +75,14 @@ class RecommendationEngine:
         :return: sorted list of recommended books tuples (book_id, recommendation_score)
         """
 
-        def all_books_recommendation(user_rating=user_rating, ratings_data=collaborative_data,
+        def all_books_recommendation(user_rating=self.user_rating, ratings_data=self.collaborative_data,
                                      method=jaccard_similarity_score):
             """
             Recommendation engine based on collaborative filtering. Creates recommendation array summing up weighted similarity
             scores by book, divided by sum of user similarities per rating.
 
-            :param user_rating: list of user inputs. Size 15, nan replaced with 0
-            :param ratings_data: dataframe with user ratings about the 15 books
+            :param user_rating: list of user inputs as int. Size 15, nan replaced with 0
+            :param ratings_data: dataframe with user ratings for the 15 books
             :param method: similarity measurement method. Jaccard similarity (default)
             :return: array of recommendation ratings for all 15 books
             """
@@ -96,7 +102,7 @@ class RecommendationEngine:
             sim_sum = np.sum(user_similarities, axis=0)
             return total / sim_sum
 
-        def filter_recommendation(recommendation, user_input=user_rating):
+        def filter_recommendation(recommendation, user_input=self.user_rating):
             """
             Filter recommendation array based on input books
 
@@ -126,7 +132,7 @@ class RecommendationEngine:
                 recommended_dict[id] = rating
             return sorted(recommended_dict.items(), key=lambda x: x[1], reverse=True)
 
-        recommended_books, recommended_ratings = filter_recommendation(all_books_recommendation(user_rating))
+        recommended_books, recommended_ratings = filter_recommendation(all_books_recommendation(self.user_rating))
         recommendation_for_user = sort_recommendation(recommended_books, recommended_ratings)
         return recommendation_for_user
 
