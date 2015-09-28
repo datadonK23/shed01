@@ -1,3 +1,43 @@
 body {
-    background: #f5f5f5;
+    background: #eeeeee;
 }
+
+/*
+.navbar-inverse {
+  background-color: rgba(49, 54, 59, 1);
+}
+
+body {
+  color: rgba(61, 174, 253, 1);
+}
+
+.panel-primary {
+  border-color: rgba(49, 54, 59, 1);
+  color: #ffffff;
+}
+.panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: rgba(49, 54, 59, 1);
+  border-color: rgba(49, 54, 59, 1);
+}
+
+
+.panel-info {
+  border-color: rgba(201, 206, 59, 1);
+}
+.panel-info > .panel-heading {
+  color: #ffffff;
+  background-color: rgba(201, 206, 59, 1);
+  border-color: #cba4dd;
+}
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #cba4dd;
+}
+.panel-info > .panel-heading .badge {
+  color: #9c27b0;
+  background-color: #ffffff;
+}
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #cba4dd;
+}
+*/
