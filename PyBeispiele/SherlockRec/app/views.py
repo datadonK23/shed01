@@ -19,6 +19,7 @@ def index():
 # SURVEY page
 @app.route("/survey")
 def survey():
+    global bookTitles
     bookTitles = []
     ratings = {}
 
@@ -38,6 +39,7 @@ def survey():
     else:
         return render_template("survey.html", bookTitles=bookTitles)
 
+
 # RECOMMENDATION page
 @app.route("/recommendation/<ratings>/")
 @app.route("/recommendation")
@@ -45,12 +47,16 @@ def recommendation(ratings=None):
     if ratings: # ratings string received
         global user_rating_list
         user_rating_list = [] # list of ints for recommendation engine
+        global ratings_count
+        ratings_count = 0
 
         # process ratings string to json to list in correct order
         json_acceptable_string = ratings.replace("'", "\"").replace("u", "")
         input_dict = json.loads(json_acceptable_string)
         input_ordered = collections.OrderedDict(sorted(input_dict.items(), key=lambda x: int(x[0])))
         for k,v in input_ordered.items():
+            if int(input_ordered[k]) != 0:
+                ratings_count += 1
             user_rating_list.append(int(input_ordered[k]))
 
         return redirect(url_for("recommendation"))
@@ -75,20 +81,23 @@ def recommendation(ratings=None):
             titlesRecomm.append(all_books.loc[recommendation[i][0]].TITLE)
             scoresRecomm.append("%.4f" % recommendation[i][1])
 
-        # store user rating in db
-        db_connection = models.DB()
-        insert_confirmation = db_connection.insert_user_rating(user_rating_list)
-        print insert_confirmation
+        # store user rating in db only if ratings count is > 2
+        if ratings_count > 2:
+            db_connection = models.DB()
+            insert_confirmation = db_connection.insert_user_rating(user_rating_list)
+            print insert_confirmation
+        else: # show warning message
+            warning_msg = zip(["zu wenige Bewertungen"], ["probier es noch einmal"])
+            return render_template("recommendation.html", recomm_out=warning_msg)
 
-    else:
+    else: # if something unexpected went wrong
         titlesRecomm = ["Invalid Input"]
-        scoresRecomm = ["NA"]
+        scoresRecomm = ["probier es noch einmal"]
 
     return render_template("recommendation.html", recomm_out=zip(titlesRecomm, scoresRecomm))
 
 
 # REFERENCES page
-@app.route("/ref")
+@app.route("/references")
 def ref():
-    #FIXME
     return render_template("ref.html")

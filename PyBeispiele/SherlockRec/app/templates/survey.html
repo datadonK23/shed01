@@ -14,8 +14,7 @@
 
     <!-- Custom CSS and Font-->
     <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!--<link rel="stylesheet" href="../static/css/main.css">-->
-    <link rel="stylesheet" href="../static/css/custom-theme.css">
+    <link href="../static/css/theme.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,9 +33,9 @@
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
                 </button>
                 <a class="navbar-brand" href="/">SherlRec System</a>
             </div>
@@ -51,7 +50,7 @@
                         <a href="/survey">App</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="/ref#information">Referenzen &amp; Rechtliches</a>
+                        <a href="/references#information">Referenzen &amp; Rechtliches</a>
                     </li>
                 </ul>
             </div>
@@ -59,6 +58,16 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+<!-- Header -->
+    <header>
+        <div class="container">
+            <div class="text-center">
+                <h2>Anwendung</h2>
+                <br/>
+            </div>
+        </div>
+    </header>
 
 <!-- Survey Section -->
     <section id="survey">
@@ -70,14 +79,27 @@
                             <h3 class="panel-title">Beschreibung</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Text</p>
+                            <p class="lead">Gib an, welche B&uuml;cher Dir aus der Sherlock Holmes Reihe gefallen
+                                haben&nbsp;<b>(+)</b> und welche Dir nicht gefallen haben&nbsp;<b>(-)</b>.
+                            </p>
+                            <p>
+                                Hast Du ein Buch nicht gelesen, belasse den Radiobutton in neutraler Position.
+                            </p>
+                            <p>
+                                <big>Achtung</big>, bewerte <b>mindestens 2</b> B&uuml;cher!
+                            </p>
+                            <p>
+                                Sobald Du die Eingaben absendest, werden sie in einer Empfehlungsmaschine
+                                weiterverarbeitet und als Ergebnis erh&auml;ltst Du eine f&uuml;r Dich individualisierte
+                                Leseliste von B&uuml;chern aus der Sherlock Holmes Reihe.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 col-md-offset-0 ">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">App</h3>
+                            <h3 class="panel-title">Eingabe</h3>
                         </div>
                         <div class="panel-body" id="input-form">
 <!-- Input -->

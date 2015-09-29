@@ -18,9 +18,7 @@
 
     <!-- Custom CSS and Font-->
     <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!--<link rel="stylesheet" href="../static/css/main.css">-->
-    <link rel="stylesheet" href="../static/css/custom-theme.css">
-
+    <link href="../static/css/theme.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,9 +36,9 @@
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
                 </button>
                 <a class="navbar-brand" href="/">SherlRec System</a>
             </div>
@@ -55,7 +53,7 @@
                         <a href="/survey">App</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="/ref#information">Referenzen &amp; Rechtliches</a>
+                        <a href="/references#information">Referenzen &amp; Rechtliches</a>
                     </li>
                 </ul>
             </div>
@@ -71,7 +69,7 @@
                 <h2>SherlRec System</h2>
                 <p>Eine Empfehlungsmaschine f&uuml;r das Lesen der B&uuml;cher aus der Sherlock Holmes Reihe von
                     <a href="https://de.wikipedia.org/wiki/Arthur_Conan_Doyle" target="_blank">Sir Arthur Conan Doyle</a>
-                </p>
+                </p><br/>
             </div>
         </div>
     </header>
@@ -88,11 +86,13 @@
                         </div>
                         <div class="panel-body">
                             <div class="media text-center">
-                                <img class="img-responsive center-block" src="../static/img/Sherlock_Holmes_Img.jpg"
-                                     alt="Image of Sherlock Holmes in front of mountains">
-                                <p class="center-text"><small>Source:
-        <a href="https://commons.wikimedia.org/wiki/File:Holmes_-_Steele_1903_-_The_Empty_House_-_The_Return_of_Sherlock_Holmes.jpg"
-                                target="_blank">Wikimedia</a></small></p>
+                                <img class="img-responsive center-block" src="../static/img/sherlock-logo.png"
+                                     alt="Silhouette von Sherlock Holmes">
+                                <p class="center-text"><small>
+                                    <a href="https://de.wikipedia.org/wiki/Sherlock_Holmes" target="_blank">
+                                        Sherlock Holmes
+                                    </a></small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -112,8 +112,8 @@
                             <p>Zuerst wirst Du gefragt, wie Du die bereits gelesenen B&uuml;cher der Reihe bewertest.
                                 Diese Angaben werden dann mit den Bewertungen anderer BenutzerInnen verglichen und
                                 darauf basierend Empfehlungswerte berechnet. B&uuml;cher mit hohen Werten haben andere
-                                NutzerInnen, welche &auml;nhnliche Bewertungen wir Du abgegeben haben, hoch bewertet.
-                                Diese sollten Deinen Geschmack also besser treffen, als jene mit niedrigeren Werten.
+                                NutzerInnen, welche &auml;nhnliche Bewertungen wie Du abgegeben haben, hoch bewertet.
+                                Diese sollten Deinen Geschmack also besser treffen, als jene mit niedrigen Werten.
                             </p>
                             <div class="text-center">
                                 <a href="/survey" class="btn btn-success btn-xl">zur App</a>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div class="col-md-10 col-md-offset-1 ">
-                    <div class="panel panel-warning">
+                    <div class="panel panel-danger">
                         <div class="panel-heading">
                             <h3 class="panel-title">Achtung Test Applikation</h3>
                         </div>
@@ -134,7 +134,7 @@
                                 Basis der Bewertungen in der Datenbank besteht aber aus k&uuml;nstlich simulierten
                                 Werten. Da es sich eben nur um eine Beispielanwendung handelt, ist auch auf die
                                 Verifizierung der Bewertungen verzichtet und weder die Anwendung, noch der
-                                Algorithmus, hinsichtlich Geschwindigkeit optimiert worden.
+                                Algorithmus, hinsichtlich Sicherheit oder Geschwindigkeit optimiert worden.
                             </p>
                         </div>
                     </div>

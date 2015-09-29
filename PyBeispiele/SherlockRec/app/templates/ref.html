@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Thomas Treml (datadonk23@gmail.com)">
 
-    <title>Projekt Titel #FIXME : Referenzen</title>
+    <title>SherlRec System</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS and Font-->
     <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../static/css/main.css">
+    <link href="../static/css/theme.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,37 +25,37 @@
 
 <body>
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Titel Projekt</a>
-        </div>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
+                    <span class="icon-bar" style="background-color:rgba(74, 188, 156, 1);"></span>
+                </button>
+                <a class="navbar-brand" href="/">SherlRec System</a>
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li class="page-scroll">
-                    <a href="/survey">App</a>
-                </li>
-                <li class="page-scroll">
-                    <a href="/ref#information">Referenzen &amp; Rechtliches</a>
-                </li>
-            </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/survey">App</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/references#information">Referenzen &amp; Rechtliches</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+        <!-- /.container-fluid -->
+    </nav>
 
 <!-- Header -->
 <header>
@@ -71,7 +71,7 @@
 <section id="info">
     <div class="container">
         <div class="row ">
-            <div class="col-md-5 col-md-offset-0" id="reference">
+            <div class="col-md-6 col-md-offset-0" id="reference">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">Referenzen</h3>
@@ -82,21 +82,56 @@
                             <tr>
                                 <th>Bereich</th>
                                 <th>Quelle</th>
-                                <th>Download</th>
+                                <th>Link</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <!--<tr>
                                 <td>Daten</td>
                                 <td>Projekt Gutenberg</td>
                                 <td><a href="https://www.gutenberg.org/ebooks/subject/76" target="_blank">
                                     https://www.gutenberg.org/ebooks/subject/76</a></td>
+                            </tr>-->
+                            <tr>
+                                <td>Bewertungen</td>
+                                <td>simuliert</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Frontend</td>
                                 <td>Bootstrap</td>
                                 <td><a href="http://getbootstrap.com/" target="_blank">
                                     http://getbootstrap.com</a></td>
+                            </tr>
+                            <tr>
+                                <td>Frontend Theme</td>
+                                <td>Bootswatch Paper</td>
+                                <td><a href="https://bootswatch.com/paper/" target="_blank">
+                                    https://bootswatch.com/paper</a></td>
+                            </tr>
+                            <tr>
+                                <td>Backend</td>
+                                <td>Python</td>
+                                <td><a href="https://www.python.org/" target="_blank">
+                                    https://www.python.org</a></td>
+                            </tr>
+                            <tr>
+                                <td>Backend Framework</td>
+                                <td>Flask</td>
+                                <td><a href="http://flask.pocoo.org/" target="_blank">
+                                    http://flask.pocoo.org</a></td>
+                            </tr>
+                            <tr>
+                                <td>Datenbank</td>
+                                <td>PostgreSQL</td>
+                                <td><a href="http://www.postgresql.org/" target="_blank">
+                                    http://www.postgresql.org</a></td>
+                            </tr>
+                            <tr>
+                                <td>Collaborative Filtering Algorithmus</td>
+                                <td>Programming Collective Intelligence</td>
+                                <td><a href="http://shop.oreilly.com/product/9780596529321.do" target="_blank">
+                                    O'Reilly Shop</a></td>
                             </tr>
                             </tbody>
                         </table>
@@ -114,12 +149,12 @@
                             <li>Inhaber: Mag. Thomas Treml</li>
                             <li>Rechtsform: Einzelunternehmen</li>
                             <li>Sitz: A-4400 Steyr, Bogenhausstr. 5/1</li>
-                            <li>Mail: <a href="mailto:office@datensensorium.co.at">office@datensencorium.co.at</a></li>
+                            <li>Mail: <a href="mailto:office@datensensorium.co.at">office@datensensorium.co.at</a></li>
                             <li>Firmenbuchnummer: FN 419803 h</li>
                             <li>Firmenbuchgericht: LG Steyr</li>
                             <li>UID / VAT ID: ATU68909416</li>
                             <li>Web:
-                                <a href="http://datensensorium.co.at/" target="_blank">www.datensenorium.co.at</a>
+                                <a href="http://datensensorium.co.at/" target="_blank">www.datensensorium.co.at</a>
                             </li>
                         </ul>
                     </div>
@@ -128,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-md-offset-0" id="contact">
+            <div class="col-md-2 col-md-offset-0" id="contact">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">Kontakt</h3>
@@ -152,6 +187,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-2 col-md-offset-0" id="license">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Lizenz</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <p>
+                            <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">
+                            Apache Lizenz, V&nbsp;2.0
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-10 col-md-offset-1" id="privacy">
                 <div class="panel panel-info">
                     <div class="panel-heading">
@@ -167,40 +216,20 @@
                             informiert dar&uuml;ber, wie mit den Daten umgegangen wird. Ein Datenaustausch mit anderen Firmen erfolgt nicht,
                             wodurch die Datenschutzerkl&auml;rung auf Ihren Besuch unserer Webseite beschr&auml;nkt bleibt.</small></p>
                         <h6>Persönliche Daten und ihre Anwendung</h6>
-                        <p><small>Um bei uns Dienstleistungen in Anspruch nehmen zu k&ouml;nnen, brauchen Sie ein Kundenkonto. Dieses
-                            Kundenkonto beinhaltet pers&ouml;nliche Daten wie den Namen, die Anschrift oder die E-Mail-Adresse. Die Daten
-                            werden in unserer Datenbank zwecks sp&auml;terer Verarbeitung beim Einloggen gespeichert.</small></p>
-                        <p><small>Zudem werden automatisch Daten in unseren Logfiles gespeichert, die wir von Ihrem Browser w&auml;hrend des
-                            Besuches erhalten (Browser ist zum Beispiel der Chrome, Firefox, Safari etc.). Das bedeutet, dass die IP-Adresse
-                            bekannt ist und es wird ein Cookie auf Ihrem Computer angelegt. Dieses Cookie garantiert, dass die Abwicklung
-                            der Bestellung oder die Durchf&uuml;hrung der Dienstleistung ordnungsgem&auml;&szlig; abgewickelt werden kann
-                            und vor allem ist es dadurch m&ouml;glich, Ihre Interessen zu speichern, sodass wir Ihnen beim n&auml;chsten
-                            Besuch jene Produkte und Dienstleistungen anbieten k&ouml;nnen, die Sie besonders interessieren, ohne dass Sie
-                            das Interesse wiederholen m&uuml;ssen.</small></p>
+                        <p><small>Um bei die Dienstleistungen dieser Seite in Anspruch nehmen zu k&ouml;nnen, brauchen Sie kein Kundenkonto.
+                            Die nicht personenbezogenen Daten Ihrere Formulareingaben werden in unserer Datenbank zwecks der Verbesserung des
+                            Systems gespeichert.</small></p>
+                        <p><small>Durch die Verwendung einer PaaS Platform f&uuml;r die Bereitstellung der Seite, kann es vorkommen, dass der
+                            Service Anbieter automatisch Daten &uuml;ber Ihren Besuch auf der Seite in Logfiles speichert. Das bedeutet, dass
+                            die IP-Adresse und der Besuchszeitpunkt dem Service Anbieter bekannt sind.</small></p>
                         <h6>Weitergabe der Daten</h6>
                         <p><small>Die Daten, die wir von Ihnen erhalten haben, werden nicht an Dritte weitergegeben.</small></p>
                         <h6>Cookies</h6>
-                        <p><small>Immer wieder kommt es zu Unsicherheiten wegen der Cookies, die auf dem Computer des Besuchers gespeichert
-                            werden. Doch diese kleinen Dateien sind reine Informationsspeicher. Es werden keine Viren produziert, der
-                            Computer wird nicht angegriffen und Sie werden nicht ausgeforscht.</small></p>
-                        <p><small>Ziel des Cookies ist einzig, Ihre pers&ouml;nlichen Aktivit&auml;ten und Interessen zu speichern, sodass
-                            wir bei Ihrem n&auml;chsten Besuch damit arbeiten k&ouml;nnen. Der Vorteil für Sie besteht auch darin, dass Sie
-                            beim Besuch unserer Webseite sofort jene Angebote sehen k&ouml;nnen, die Ihren Interessen entsprechen. Das ist
-                            m&ouml;glich, weil im Cookie gespeichert ist, welche Produkte und Dienstleistungen Sie sich zuletzt angeschaut
-                            haben und entsprechende Alternativen oder Ergänzungen herausgesucht werden, sobald Sie die Seite
-                            aufrufen.</small></p>
-                        <h6>L&ouml;schung der Daten</h6>
-                        <p><small>Sie k&ouml;nnen eine L&ouml;schung Ihres Kundenkontos jederzeit selbst durchf&uuml;hren oder eine
-                            L&ouml;schung durch den Webseitenbetreiber beantragen. Diese wird innerhalb der gesetzlichen Frist von 8 Wochen
-                            nach Erhalt Ihres Antrages erfolgen.</small></p>
+                        <p><small>Diese Seite verwendet keine Cookies.</small></p>
                         <h6>Datenschutz</h6>
-                        <p><small>Wie bereits erw&auml;hnt, werden die Daten nicht weitergegeben. Um die Datensicherheit zu
-                            gew&auml;hrleisten, ist Ihr Kundenkonto passwortgesch&uuml;tzt, wodurch fremde Personen keinen Zugriff auf das
-                            Konto und die Daten haben.</small></p>
+                        <p><small>Wie bereits erw&auml;hnt, werden die Daten nicht weitergegeben.</small></p>
                         <h6>&Auml;nderungen dieser Datenschutzerkl&auml;rung</h6>
-                        <p><small>Der Webseitenbetreiber beh&auml;lt sich vor, diese Datenschutzerkl&auml;rung zu &auml;ndern. Sollte dies
-                            der Fall sein, werden Sie per E-Mail informiert und Sie erhalten entsprechende Informationen auch im Rahmen
-                            Ihres Kundenkontos.</small></p>
+                        <p><small>Der Webseitenbetreiber beh&auml;lt sich vor, diese Datenschutzerkl&auml;rung zu &auml;ndern.</small></p>
                     </div>
                 </div>
             </div>
