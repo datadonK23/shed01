@@ -1,15 +1,12 @@
-TourismAT
-=========
+SherlVis
+========
 
-Visualisierung des touristischen Indikators der Nächtigungszahlen pro Monat je Bundesland in Österreich. Dient als Vorlage für Webapp mit Flask und Bokeh.
+Visualisierung des gemeinsamen Auftauchens von Charaktere in BBC TV-Reihe Sherlock (Beispielcode für Shed01 Blog)
 
 ## Repository enthält:
 Ressourcendateien, Anwendungen und Beispieldaten (falls keine Downloadanweisung in den Projekten enthalten ist) aus den Beispielen des Shed01 Blogs (http://shed01.blogspot.co.at/):
-* LICENCE: Lizenztext
-* main.py: Hauptdatei, enthält Programmlogik
-* NOTICE: Notice Datei
-* .Zdata: Daten Ordner, enthält eigenen Datei mit Referenzen zu Datenquellen (./data/ref.txt)
-* ...
+* index.html - Webpage. d3 Code abgeleitet von Beispielcode von Mike Bostock (http://bl.ocks.org/mbostock/4062006). Daten selbst generiert
+* stylesheets - from Github.io
 
 ### Kontakt: datadonk23@gmail.com
 

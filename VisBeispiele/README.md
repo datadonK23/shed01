@@ -7,6 +7,7 @@ Daten Visualisierungs Beispiele für Shed01 Blog
 Beispielcode und -daten (falls keine Downloadanweisung in Skripten enthalten ist) aus den Beispielen des Shed01 Blogs (http://shed01.blogspot.co.at/):
 * WahlenVis_EUinSR: Qt-App visualisiert Wahlergebnisse der EU Wahlen in Steyr 2014
 * VornamenOOE: Visualisierung beliebtester Vornamen in OOE
+* SherlVis: Visualisierung von gemeinsamen Auftauchen von Charaktere in BBC Fernsehreihe Sherlock
 * ...
 
 ### Kontakt: datadonk23@gmail.com
